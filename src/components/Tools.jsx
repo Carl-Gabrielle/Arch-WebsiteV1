@@ -1,133 +1,123 @@
-"use client";
+  "use client";
 
-import {
-  PenTool,
-  Box,
-  Palette,
-  Monitor,
-  DraftingCompass,
-  Layers,
-  FileSpreadsheet,
-  FileText,
-} from "lucide-react";
+  import { toolGroups } from "./Tools/toolGroups";
 
-/* ---------------- DATA ---------------- */
-const toolGroups = [
-  {
-    id: "01",
-    title: "Architectural Design",
-    tools: [
-      { name: "AutoCAD", icon: PenTool, color: "text-red-500" },
-      { name: "SketchUp", icon: Box, color: "text-amber-600" },
-      { name: "Procreate", icon: Palette, color: "text-violet-500" },
-    ],
-  },
-  {
-    id: "02",
-    title: "Visualization & Presentation",
-    tools: [
-      { name: "D5 Render", icon: Monitor, color: "text-sky-500" },
-      { name: "Illustrator", icon: Layers, color: "text-orange-500" },
-      { name: "Presentation Boards", icon: Monitor, color: "text-emerald-500" },
-    ],
-  },
-  {
-    id: "03",
-    title: "Documentation & Workflow",
-    tools: [
-      { name: "Revit", icon: DraftingCompass, color: "text-blue-500" },
-      { name: "Excel", icon: FileSpreadsheet, color: "text-green-500" },
-      { name: "Word / Reports", icon: FileText, color: "text-stone-600" },
-    ],
-  },
-];
+  export default function Tools() {
+    return (
+      <section className="relative overflow-hidden bg-[#f4f1ea] py-20 text-stone-900 sm:py-24 lg:py-32">
 
-/* ---------------- UI COMPONENT ---------------- */
-export default function Tools() {
-  return (
-    <section className="relative isolate overflow-hidden bg-[#f3f1ec] py-28 text-stone-900">
+        {/* GRID BACKGROUND */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,#44403c_1px,transparent_1px),linear-gradient(to_bottom,#44403c_1px,transparent_1px)] [background-size:72px_72px]" />
 
-      {/* Blueprint Grid Background */}
-      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(68,64,60,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(68,64,60,0.12)_1px,transparent_1px)] [background-size:60px_60px]" />
+        {/* SOFT LIGHT */}
+        <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-[#d9c7a7]/40 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full bg-stone-300/30 blur-3xl" />
 
-      {/* Architectural light blobs (soft, professional) */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-[#d8c8a8] blur-3xl opacity-40" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[520px] w-[520px] rounded-full bg-[#b7b0a4] blur-3xl opacity-30" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          {/* HEADER */}
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
 
-        {/* HEADER */}
-        <div className="max-w-3xl">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.4em] text-stone-500">
+                Design Toolkit
+              </p>
 
-          <p className="text-[11px] uppercase tracking-[0.3em] text-stone-600">
-            Design Stack
-          </p>
-
-          <h2 className="mt-5 text-5xl leading-[1.05] sm:text-6xl">
-            Tools That Shape
-            <br />
-            My Design Process
-          </h2>
-
-          <p className="mt-6 text-base leading-relaxed text-stone-700">
-            A curated architectural toolkit used across concept development,
-            modeling, visualization, and technical documentation.
-          </p>
-        </div>
-
-        {/* TOOL GROUPS */}
-        <div className="mt-16 space-y-20">
-
-          {toolGroups.map((group) => (
-            <div key={group.id}>
-
-              {/* Section label */}
-              <div className="flex items-center gap-4">
-                <span className="h-[1px] w-12 bg-stone-700/40" />
-                <h3 className="text-[11px] uppercase tracking-[0.35em] text-stone-600">
-                  {group.title}
-                </h3>
-              </div>
-
-              {/* GRID */}
-              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-                {group.tools.map((tool) => {
-                  const Icon = tool.icon;
-
-                  return (
-                    <div
-                      key={tool.name}
-                      className="group relative flex items-center gap-5 rounded-2xl border border-stone-400/30 bg-white/50 px-6 py-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-stone-900 hover:bg-white/80"
-                    >
-
-                      {/* ICON BLOCK */}
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">
-                        <Icon className={`h-5 w-5 ${tool.color}`} />
-                      </div>
-
-                      {/* TEXT */}
-                      <div>
-                        <p className="text-lg text-stone-900">
-                          {tool.name}
-                        </p>
-                        <p className="text-[11px] uppercase tracking-[0.25em] text-stone-500">
-                          Software Tool
-                        </p>
-                      </div>
-
-                      {/* underline hover (architectural line effect) */}
-                      <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-stone-900 transition-all duration-500 group-hover:w-full" />
-                    </div>
-                  );
-                })}
-
-              </div>
+              <h2 className="mt-6 max-w-4xl text-5xl font-light leading-[1.02] tracking-[-0.04em] sm:text-7xl">
+                Software &
+                <br />
+                Creative Workflow
+              </h2>
             </div>
-          ))}
+
+            <div className="max-w-md border-l border-stone-300 pl-6">
+              <p className="text-sm leading-relaxed text-stone-600">
+                A curated collection of digital tools used throughout
+                architectural planning, visualization, drafting,
+                and presentation development.
+              </p>
+            </div>
+
+          </div>
+
+          {/* TOOL GROUPS */}
+          <div className="mt-24 space-y-24">
+
+            {toolGroups.map((group) => (
+              <div
+                key={group.id}
+                className="grid gap-10 border-t border-stone-300 pt-10 lg:grid-cols-[280px_1fr] lg:items-start"
+              >
+
+                {/* LEFT SIDE */}
+                <div>
+
+                  <div className="flex items-center gap-4">
+                    <span className="text-xs tracking-[0.3em] text-stone-400">
+                      {group.id}
+                    </span>
+
+                    <div className="h-px flex-1 bg-stone-300" />
+                  </div>
+
+                  <h3 className="mt-6 text-2xl font-light tracking-tight">
+                    {group.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-relaxed text-stone-600">
+                    {group.description}
+                  </p>
+                </div>
+
+                {/* RIGHT SIDE */}
+  <div className="grid gap-px overflow-hidden rounded-[2rem] border border-stone-300 bg-stone-300 sm:grid-cols-2 xl:grid-cols-3">
+
+    {group.tools.map((tool) => {
+      const Icon = tool.icon;
+
+      return (
+        <div
+          key={tool.name}
+          className="group relative flex items-center gap-5 bg-[#f8f6f1] px-5 py-5 transition-all duration-500 hover:bg-white sm:px-6"
+        >
+
+          {/* subtle corner detail */}
+          <div className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full border border-stone-400/40 transition duration-500 group-hover:scale-125 group-hover:border-stone-700" />
+
+          {/* ICON */}
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-stone-300 bg-white shadow-[0_4px_18px_rgba(0,0,0,0.03)] transition duration-500 group-hover:-translate-y-0.5">
+
+            <Icon className="h-5 w-5 text-stone-700" />
+
+          </div>
+
+          {/* TEXT */}
+          <div className="min-w-0">
+
+            <p className="truncate text-[17px] font-light tracking-tight text-stone-900">
+              {tool.name}
+            </p>
+
+            <p className="mt-1 text-[10px] uppercase tracking-[0.28em] text-stone-500">
+              Professional Tool
+            </p>
+
+          </div>
+
+          {/* HOVER LINE */}
+          <div className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-stone-900 transition-all duration-700 group-hover:w-full" />
 
         </div>
-      </div>
-    </section>
-  );
-}
+      );
+    })}
+
+  </div>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+    );
+  }
