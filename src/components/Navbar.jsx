@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="border-b border-stone-300/70 bg-gradient-to-r from-[#f4f1eb]/95 via-[#f8f6f1]/95 to-[#f4f1eb]/95 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6 lg:px-10 py-2">
           <Brand />
           <DesktopNav />
           <MenuToggleButton

@@ -28,7 +28,7 @@ export default function Projects() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <ProjectsHeader
           activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
+          onCategoryChange={setActiveCategory} 
         />
 
         <FeaturedProjectCard project={featuredProject} />

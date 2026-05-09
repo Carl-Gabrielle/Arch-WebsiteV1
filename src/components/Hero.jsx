@@ -1,5 +1,9 @@
 export default function Hero() {
-  const focusAreas = ["Adaptive Reuse", "Climate-Responsive Design", "Urban Housing"];
+  const focusAreas = [
+    "Adaptive Reuse",
+    "Climate-Responsive Design",
+    "Urban Housing",
+  ];
   const quickFacts = [
     { value: "06", label: "Studio Projects" },
     { value: "02", label: "Design Competitions" },
@@ -8,7 +12,6 @@ export default function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#f3f1ec] text-stone-900">
-      
       {/* Blueprint-like background */}
       <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(to_right,rgba(68,64,60,0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgba(68,64,60,0.14)_1px,transparent_1px)] [background-size:56px_56px]" />
       <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#d8c8a8]/40 blur-3xl" />
@@ -20,7 +23,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-3 border border-stone-400/50 bg-white/60 px-4 py-2 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-[#b88a4b] motion-safe:animate-pulse" />
             <p className="font-['Sora'] text-[11px] uppercase tracking-[0.24em] text-stone-700">
-              Architecture  Portfolio
+              Architecture Portfolio
             </p>
           </div>
 
@@ -33,9 +36,10 @@ export default function Hero() {
           </h1>
 
           <p className="max-w-2xl font-['Sora'] text-base leading-relaxed text-stone-700 sm:text-lg">
-            I’m an architecture student focused on people-first and climate-aware design.
-            Currently applying for a 2026 internship to contribute in concept development,
-            technical drafting, and visual storytelling.
+            I’m an architecture student focused on people-first and
+            climate-aware design. Currently applying for a 2026 internship to
+            contribute in concept development, technical drafting, and visual
+            storytelling.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
@@ -67,7 +71,9 @@ export default function Hero() {
           <div className="grid grid-cols-3 gap-4 border-t border-stone-400/60 pt-8">
             {quickFacts.map((fact) => (
               <div key={fact.label}>
-                <p className="font-['Fraunces'] text-3xl text-stone-950">{fact.value}</p>
+                <p className="font-['Fraunces'] text-3xl text-stone-950">
+                  {fact.value}
+                </p>
                 <p className="mt-1 font-['Sora'] text-[11px] uppercase tracking-[0.16em] text-stone-600">
                   {fact.label}
                 </p>
@@ -96,7 +102,8 @@ export default function Hero() {
                 Civic Learning Hub
               </h3>
               <p className="mt-2 font-['Sora'] text-sm leading-relaxed text-stone-600">
-                Mixed-use concept balancing public activity, daylight strategy, and modular structure.
+                Mixed-use concept balancing public activity, daylight strategy,
+                and modular structure.
               </p>
             </div>
           </div>

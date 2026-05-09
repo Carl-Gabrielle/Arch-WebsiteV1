@@ -8,9 +8,39 @@ export default function ProjectsHeader({ activeCategory, onCategoryChange }) {
           Portfolio Collection
         </p>
 
-        <h2 className="mt-5 text-5xl font-light leading-[1.05] tracking-tight text-white md:text-6xl">
-          Architectural
-          <span className="block italic text-zinc-500">Project Experience</span>
+        <h2 className="relative mt-5 text-5xl font-light leading-[1.05] tracking-tight md:text-6xl isolate">
+          {/* BACKDROP OUTLINE TEXT */}
+          <span
+            className="
+    pointer-events-none
+    absolute
+    inset-x-0
+    top-[-60%]
+    sm:top-[-40%]
+    -translate-y-1/2
+    w-full
+    px-4
+    text-center
+    select-none
+    whitespace-nowrap
+    text-[clamp(3.5rem,11vw,20rem)]
+    font-semibold
+    tracking-[0.12em]
+    text-white/5
+    uppercase
+    z-0
+  "
+          >
+            {activeCategory === "All" ? "PROJECTS" : activeCategory}
+          </span>
+          {/* MAIN TITLE */}
+          <span className="mt-5 text-5xl font-light leading-[1.05] tracking-tight text-white md:text-6xl">
+            Architectural
+          </span>
+
+          <span className="relative z-10 block italic text-zinc-500">
+            Project Experience
+          </span>
         </h2>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">

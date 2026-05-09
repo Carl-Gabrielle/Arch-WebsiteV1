@@ -1,11 +1,24 @@
 "use client";
 
-import { ArrowUpRight, CalendarDays, Clock3, Mail, MapPin, Phone } from "lucide-react";
-import { InlineWidget } from "react-calendly";
-import { FaFacebookF, FaInstagram, FaLinkedinIn,FaYoutube } from "react-icons/fa";
+import {
+  ArrowUpRight,
+  CalendarDays,
+  Clock3,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
-const calendlyUrl =
-  "https://calendly.com/carlgabrielleorfinada1/30min";
+import { InlineWidget } from "react-calendly";
+
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+
+const calendlyUrl = "https://calendly.com/carlgabrielleorfinada1/30min";
 
 const contacts = [
   {
@@ -17,14 +30,14 @@ const contacts = [
   },
   {
     label: "Phone",
-    value: "+639 95 164 7477",
+    value: "+63 995 164 7477",
     href: "tel:+639951647477",
     icon: Phone,
-    note: "Available Mon-Fri, 9:00 AM - 6:00 PM",
+    note: "Available Mon–Fri, 9:00 AM – 6:00 PM",
   },
   {
     label: "Location",
-    value: "Brgy. Balangobong, Alaminos City, Pangasinan",
+    value: "Alaminos City, Pangasinan",
     href: "https://maps.app.goo.gl/8WVKk3LxSv2hHVcBA",
     icon: MapPin,
     note: "Open to remote and on-site collaboration",
@@ -32,61 +45,99 @@ const contacts = [
 ];
 
 const socials = [
-  { name: "Facebook", href: "https://www.facebook.com/anton.regines.santa.cruz/?_rdc=1&_rdr#", icon: FaFacebookF },
-  { name: "Instagram", href: "https://www.instagram.com/santacruz.anton?igsh=bHdlMG9icXBncmdq", icon: FaInstagram },
-  { name: "LinkedIn", href: "https://linkedin.com/in/yourprofile", icon: FaLinkedinIn },
-  { name: "YouTube", href: "https://www.youtube.com/@Antoninosz", icon: FaYoutube },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/anton.regines.santa.cruz/?_rdc=1&_rdr#",
+    icon: FaFacebookF,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/santacruz.anton?igsh=bHdlMG9icXBncmdq",
+    icon: FaInstagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/yourprofile",
+    icon: FaLinkedinIn,
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@Antoninosz",
+    icon: FaYoutube,
+  },
 ];
-
-
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#0d0d0d] py-16 text-white sm:py-20 lg:py-24">
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-[#0d0d0d] py-20 text-white sm:py-24 lg:py-28"
+    >
+      {/* GRID */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
         <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:88px_88px]" />
       </div>
-      <div className="pointer-events-none absolute left-0 top-0 h-[300px] w-[300px] rounded-full bg-[#b78b52]/12 blur-3xl sm:h-[420px] sm:w-[420px]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl sm:h-[420px] sm:w-[420px]" />
+
+      {/* GLOW */}
+      <div className="pointer-events-none absolute left-0 top-0 h-[320px] w-[320px] rounded-full bg-[#b78b52]/12 blur-3xl sm:h-[440px] sm:w-[440px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-white/5 blur-3xl sm:h-[440px] sm:w-[440px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <header className="mb-10 max-w-4xl sm:mb-12 lg:mb-14">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-[#b78b52] sm:text-[11px]">Contact</p>
-          <h2 className="mt-4 text-3xl font-light leading-[1.08] tracking-tight text-white sm:mt-5 sm:text-5xl md:text-6xl">
-            Let&apos;s Build
-            <span className="block italic text-zinc-500">Something Meaningful</span>
-          </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:mt-6 sm:text-base">
-            Open for architecture internship opportunities, studio collaborations, and freelance
-            design support. You can schedule directly using Calendly below.
-          </p>
+        {/* HEADER */}
+        <header className="mb-14 grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[#b78b52] sm:text-[11px]">
+              Contact
+            </p>
+
+            <h2 className="mt-5 text-4xl font-light leading-[1.03] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+              Let&apos;s Build
+              <span className="block italic text-zinc-500">
+                Something Meaningful
+              </span>
+            </h2>
+          </div>
+
+          <div className="max-w-md lg:ml-auto lg:pb-2">
+            <p className="text-sm leading-[1.9] text-zinc-400 sm:text-base">
+              Open for architecture internship opportunities, studio
+              collaborations, and freelance design support. You can schedule
+              directly using Calendly below.
+            </p>
+          </div>
         </header>
 
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-7">
-          <aside className="space-y-4 sm:space-y-5 lg:col-span-5 lg:space-y-6">
+        {/* MAIN GRID */}
+        <div className="grid gap-7 lg:grid-cols-12">
+          {/* LEFT */}
+          <aside className="space-y-5 lg:col-span-5">
             {contacts.map((item) => {
               const Icon = item.icon;
+
               return (
                 <a
                   key={item.label}
                   href={item.href}
                   target={item.label === "Location" ? "_blank" : undefined}
                   rel={item.label === "Location" ? "noreferrer" : undefined}
-                  className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-[#151515] p-4 transition duration-300 hover:border-zinc-600 sm:rounded-[24px] sm:p-5"
+                  className="group block rounded-[28px] border border-zinc-800 bg-[#151515] p-5 transition duration-300 hover:border-zinc-600"
                 >
-                  <div className="flex items-start justify-between gap-3 sm:gap-4">
-                    <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-                      <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-zinc-200 transition duration-300 group-hover:border-[#b78b52] group-hover:bg-[#b78b52] group-hover:text-black sm:h-12 sm:w-12 sm:rounded-xl">
-                        <Icon size={17} />
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-zinc-200 transition duration-300 group-hover:border-[#b78b52] group-hover:bg-[#b78b52] group-hover:text-black">
+                        <Icon size={18} />
                       </div>
-                      <div className="min-w-0">
-                        <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 sm:tracking-[0.22em]">
+
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-500">
                           {item.label}
                         </p>
-                        <p className="mt-1.5 break-words text-sm leading-snug text-white sm:mt-2 sm:text-lg">
+
+                        <p className="mt-2 text-lg leading-snug text-white">
                           {item.value}
                         </p>
-                        <p className="mt-1.5 text-xs leading-relaxed text-zinc-400 sm:mt-2 sm:text-sm">
+
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                           {item.note}
                         </p>
                       </div>
@@ -101,13 +152,16 @@ export default function Contact() {
               );
             })}
 
-            <div className="rounded-2xl border border-zinc-800 bg-[#151515] p-4 sm:rounded-[24px] sm:p-6">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 sm:tracking-[0.22em]">
+            {/* SOCIALS */}
+            <div className="rounded-[28px] border border-zinc-800 bg-[#151515] p-6">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-500">
                 Social Presence
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
+
+              <div className="mt-5 flex flex-wrap gap-3">
                 {socials.map((social) => {
                   const Icon = social.icon;
+
                   return (
                     <a
                       key={social.name}
@@ -115,8 +169,8 @@ export default function Contact() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={social.name}
-                      className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-zinc-300 transition duration-300 hover:-translate-y-0.5 hover:border-[#b78b52] hover:bg-[#b78b52] hover:text-black sm:h-12 sm:w-12"
                       title={social.name}
+                      className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-zinc-300 transition duration-300 hover:-translate-y-1 hover:border-[#b78b52] hover:bg-[#b78b52] hover:text-black"
                     >
                       <Icon size={17} />
                     </a>
@@ -126,35 +180,40 @@ export default function Contact() {
             </div>
           </aside>
 
+          {/* RIGHT */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-zinc-800 bg-[#151515] p-4 sm:rounded-[30px] sm:p-7 md:p-9">
-              <div className="mb-6 flex flex-col gap-3 border-b border-zinc-800 pb-5 sm:mb-8 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:pb-6">
+            <div className="rounded-[32px] border border-zinc-800 bg-[#151515] p-5 sm:p-8 lg:p-10">
+              {/* TOP */}
+              <div className="mb-7 flex flex-col gap-4 border-b border-zinc-800 pb-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 sm:tracking-[0.22em]">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-500">
                     Book a Meeting
                   </p>
-                  <h3 className="mt-2 text-2xl font-light text-white sm:text-3xl">
+
+                  <h3 className="mt-2 text-3xl font-light text-white">
                     Schedule via Calendly
                   </h3>
                 </div>
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] text-zinc-300 sm:px-4 sm:py-2 sm:text-xs">
+
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-zinc-300">
                   <Clock3 size={14} />
                   Typical meeting: 30 mins
                 </div>
               </div>
 
-             
-
-              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-               <p className="text-xs leading-relaxed text-zinc-500">
-                Pick a time that works for you and book instantly via Calendly. If the calendar does not load here, tap "Open Calendly".
+              {/* DESCRIPTION */}
+              <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
+                  Pick a time that works for you and book instantly through
+                  Calendly. If the embedded calendar does not load properly, use
+                  the button beside this text.
                 </p>
 
                 <a
                   href={calendlyUrl}
                   target="_blank"
                   rel="noreferrer"
-                 className="inline-flex w-auto shrink-0 whitespace-nowrap items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-xs uppercase tracking-[0.16em] text-white transition duration-300 hover:border-[#b78b52] hover:bg-[#b78b52] hover:text-black sm:tracking-[0.18em]"
+                  className="inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-xs uppercase tracking-[0.18em] text-white transition duration-300 hover:border-[#b78b52] hover:bg-[#b78b52] hover:text-black"
                 >
                   <CalendarDays size={14} />
                   Open Calendly
@@ -162,8 +221,9 @@ export default function Contact() {
                 </a>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-[#111111]">
-                <div className="h-[620px] w-full sm:h-[700px] lg:h-[760px]">
+              {/* CALENDLY */}
+              <div className="overflow-hidden rounded-[28px] border border-zinc-800 bg-[#111111]">
+                <div className="h-[680px] w-full lg:h-[760px]">
                   <InlineWidget
                     url={calendlyUrl}
                     styles={{ height: "100%" }}

@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Tools from "./components/Tools";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -38,7 +39,7 @@ export default function App() {
               <section id="home" className="scroll-mt-28">
                 <Hero />
               </section>
-
+              <About />
               <section id="projects" className="scroll-mt-28">
                 <Projects />
               </section>
@@ -46,7 +47,6 @@ export default function App() {
               <section id="tools" className="scroll-mt-28">
                 <Tools />
               </section>
-
               <section id="contact" className="scroll-mt-28">
                 <Contact />
               </section>
