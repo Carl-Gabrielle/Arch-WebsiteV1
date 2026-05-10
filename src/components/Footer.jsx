@@ -21,8 +21,16 @@ const socialLinks = [
     href: "https://www.instagram.com/santacruz.anton?igsh=bHdlMG9icXBncmdq",
     icon: FaInstagram,
   },
-  { name: "LinkedIn", href: "https://linkedin.com/in/yourprofile", icon: FaLinkedin },
-  { name: "YouTube", href: "https://www.youtube.com/@Antoninosz", icon: FaYoutube },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/yourprofile",
+    icon: FaLinkedin,
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@Antoninosz",
+    icon: FaYoutube,
+  },
 ];
 
 export default function Footer() {
@@ -39,10 +47,15 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-10 lg:px-10">
         <div className="flex flex-col gap-8 border-b border-zinc-800 pb-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[#b78b52]">ARCHITECTURE PORTFOLIO</p>
-            <h3 className="mt-3 text-2xl font-light text-white sm:text-3xl">A. STA CRUZ</h3>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-[#b78b52]">
+              ARCHITECTURE PORTFOLIO
+            </p>
+            <h3 className="mt-3 text-2xl font-light text-white sm:text-3xl">
+              A. STA CRUZ
+            </h3>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-zinc-400">
-              Architecture student focused on spatial clarity and professional presentation.
+              Architecture student focused on spatial clarity and professional
+              presentation.
             </p>
           </div>
 
@@ -83,7 +96,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-zinc-500">(c) {year} A. STA CRUZ. All rights reserved.</p>
+          <p className="text-xs text-zinc-500">
+            (c) {year} A. STA CRUZ. All rights reserved.
+          </p>
 
           <div className="flex items-center gap-3">
             <a
@@ -101,6 +116,11 @@ export default function Footer() {
               Back to top
             </a>
           </div>
+        </div>
+        <div className="pointer-events-none mt-8  pt-4">
+          <p className=" text-[10px] tracking-[0.3em] text-zinc-500 text-center sm:text-right uppercase opacity-90">
+            CGNO Web & Design
+          </p>
         </div>
       </div>
     </footer>

@@ -1,45 +1,86 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { navItems } from "./navItems";
+
+const ease = [0.22, 1, 0.36, 1];
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 8,
+    filter: "blur(6px)",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.9,
+      ease,
+    },
+  },
+};
 
 export default function DesktopNav() {
   return (
     <>
-      <ul className="hidden md:flex items-center 
-        gap-4 lg:gap-8
-        font-['Manrope']
-        text-[0.62rem] lg:text-[0.75rem]
-        font-medium
-        tracking-[0.14em] lg:tracking-[0.22em]
-        uppercase
-        text-stone-600"
+      <motion.ul
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="hidden md:flex items-center gap-6 lg:gap-10 font-['Manrope'] text-[0.7rem] tracking-[0.18em] uppercase text-stone-600"
       >
-        {navItems.map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              className="relative pb-1 whitespace-nowrap transition-colors duration-300 hover:text-stone-950 after:absolute after:-bottom-[2px] after:left-0 after:h-px after:w-0 after:bg-[#b08a54] after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
+        {navItems.map((itemNav) => (
+          <motion.li key={itemNav.href} variants={item}>
+            <motion.a
+              href={itemNav.href}
+              className="relative inline-block whitespace-nowrap text-stone-600 hover:text-stone-950"
+              whileHover="hover"
             >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+              {/* TEXT */}
+              <motion.span
+                className="inline-block"
+                whileHover={{ y: -1 }}
+                transition={{ duration: 0.25, ease }}
+              >
+                {itemNav.label}
+              </motion.span>
 
-      <a
+              {/* UNDERLINE (smooth scale, no layout shift) */}
+              <motion.span
+                className="absolute left-0 -bottom-1 h-[1px] w-full bg-[#b08a54] origin-left"
+                initial={{ scaleX: 0, opacity: 0 }}
+                whileHover={{ scaleX: 1, opacity: 1 }}
+                transition={{ duration: 0.45, ease }}
+              />
+            </motion.a>
+          </motion.li>
+        ))}
+      </motion.ul>
+
+      {/* CTA */}
+      <motion.a
         href="#contact"
-        className="hidden md:inline-flex items-center
-          border border-stone-900 bg-stone-900
-          px-3 lg:px-5
-          py-2
-          font-['Manrope']
-          text-[0.58rem] lg:text-[0.68rem]
-          tracking-[0.12em] lg:tracking-[0.2em]
-          text-stone-50 uppercase
-          whitespace-nowrap
-          transition-all duration-300
-          hover:bg-transparent hover:text-stone-900"
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.2, ease }}
+        whileHover={{ y: -2, scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="hidden md:inline-flex items-center border border-stone-900 bg-stone-900 px-4 lg:px-5 py-2 text-[0.65rem] tracking-[0.18em] text-white uppercase"
       >
         Book Consultation
-      </a>
+      </motion.a>
     </>
   );
 }
