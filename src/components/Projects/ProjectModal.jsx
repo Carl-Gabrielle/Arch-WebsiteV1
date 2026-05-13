@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-
 import ProjectHero from "./ProjectHero";
 import ProjectGallery from "./ProjectGallery";
 import ProjectMeta from "./ProjectMeta";
@@ -166,25 +165,14 @@ export default function ProjectModal({ project, open, onClose }) {
                       </div>
 
                       {/* DESCRIPTION */}
-                      <p className="mt-8 text-[15px] leading-relaxed text-zinc-400">
+                      <h3 className="text-sm mt-5 uppercase tracking-[0.28em] text-zinc-600">
+                          Project Overview
+                        </h3>
+                      <p className="mt-5 text-[15px] leading-relaxed text-zinc-400">
                         {project.concept}
                       </p>
 
-                      <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                      {/* OVERVIEW */}
-                      <div>
-                        <h3 className="text-sm uppercase tracking-[0.28em] text-zinc-600">
-                          Project Overview
-                        </h3>
-
-                        <p className="mt-5 text-[15px] leading-relaxed text-zinc-300">
-                          This project was designed with a minimalist modern
-                          architectural direction focused on spatial balance,
-                          premium material finishes, and timeless visual
-                          identity.
-                        </p>
-                      </div>
+                      <div className="my-8 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
                       {/* PHILOSOPHY */}
                       <div className="mt-12">
@@ -246,12 +234,12 @@ export default function ProjectModal({ project, open, onClose }) {
 
                           <ProjectMeta
                             label="Software"
-                            value="AutoCAD / SketchUp"
+                            value={project.software}
                           />
 
                           <ProjectMeta
                             label="Deliverables"
-                            value="3D Visuals & Plans"
+                            value={project.deliverables}
                           />
                         </div>
                       </div>

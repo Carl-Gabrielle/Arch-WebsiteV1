@@ -8,8 +8,8 @@ export default function ProjectMeta({
         {label}
       </p>
 
-      <p className="mt-2 text-sm text-zinc-200">
-        {value}
+      <p className="mt-2 text-sm leading-relaxed text-zinc-200 whitespace-pre-line break-words">
+        {Array.isArray(value) ? value.join("\n") : value}
       </p>
     </div>
   );

@@ -49,13 +49,13 @@ const smoothReveal = {
 export default function Hero() {
   const focusAreas = [
     "Adaptive Reuse",
-    "Climate-Responsive Design",
-    "Urban Housing",
+    "Neo-Vernacular ",
+    "Phenomenology",
   ];
 
   const quickFacts = [
-    { value: "06", label: "Studio Projects" },
-    { value: "02", label: "Design Competitions" },
+    { value: "25+", label: "Studio Projects" },
+    { value: "03", label: "Design Competitions" },
     { value: "2026", label: "Internship Ready" },
   ];
 
@@ -111,11 +111,11 @@ export default function Hero() {
             variants={smoothReveal}
             className="font-['Fraunces'] text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
           >
-            I Design Spaces
+            Concrete dreams,
             <br />
-            With Structure,
+            cultural roots,
             <br />
-            Context, and Story.
+            boundless Imagination.
           </motion.h1>
 
           {/* DESCRIPTION */}
@@ -123,8 +123,7 @@ export default function Hero() {
             variants={smoothUp}
             className="max-w-2xl font-['Sora'] text-base leading-relaxed text-stone-700"
           >
-            I’m an architecture student focused on climate-aware and human-centered design.
-            Preparing for internship opportunities in 2026.
+            I am an architecture student graduate focused on clean, creative, and culturally rooted contemporary design. Preparing for internship opportunities this 2026.
           </motion.p>
 
           {/* CTA */}
@@ -204,10 +203,10 @@ export default function Hero() {
                 Featured Project
               </p>
               <h3 className="mt-2 font-['Fraunces'] text-2xl">
-                Civic Learning Hub
+               Alaminos City Center for Culture and the Arts
               </h3>
               <p className="mt-2 text-sm text-stone-600">
-                Public + modular architecture exploring light and spatial hierarchy.
+               Phenomenological + Symbolic cultural expressionism exploring rich history and heritage of Alaminos City
               </p>
             </motion.div>
           </motion.div>

@@ -1,7 +1,13 @@
+import first from "../../assets/first.png";
+import second from "../../assets/second.png";
 export const projectImages = [
   {
-    src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+    src: first,
     label: "Interior Perspective",
+  },
+  {
+    src: second,
+    label: "Exterior View",
   },
   {
     src: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop",

@@ -27,7 +27,9 @@ export default function ProjectCard({ project, onOpenDetails }) {
               {project.title}
             </h3>
 
-            <span className="shrink-0 text-xs text-zinc-500">{project.year}</span>
+            <span className="shrink-0 text-xs text-zinc-500">
+              {project.year}
+            </span>
           </div>
 
           <p className="mt-2 line-clamp-1 text-sm uppercase tracking-[0.15em] text-[#b78b52]">
@@ -54,17 +56,16 @@ export default function ProjectCard({ project, onOpenDetails }) {
           />
         </div>
 
-         <a
-          href="/projects"
-          className="mt-8 inline-flex items-center gap-2 text-sm uppercase tracking-[0.18em] text-white transition duration-300 hover:text-[#b78b52]"
+        <button
+          onClick={() => onOpenDetails(project)}
+          className="mt-8 inline-flex cursor-pointer items-center gap-2 text-sm uppercase tracking-[0.18em] text-white transition duration-300 hover:text-[#b78b52]"
         >
           Explore Project
-
           <ArrowUpRight
             size={16}
             className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
           />
-        </a>
+        </button>
       </div>
     </article>
   );

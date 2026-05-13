@@ -1,3 +1,4 @@
+import Pic1 from "../assets/pic1.jpg";
 export default function About() {
   return (
     <section className="relative isolate overflow-hidden bg-[#f3f1ec] text-stone-900">
@@ -19,7 +20,7 @@ export default function About() {
               <div className="absolute -inset-4 rounded-[2rem] border border-stone-500/25" />
 
               <img
-                src="https://images.unsplash.com/photo-1520975928316-56c6a1d5c8d4?q=80&w=1400&auto=format&fit=crop"
+                src={Pic1}
                 alt="Portrait"
                 className="relative h-[580px] w-full rounded-[2rem_0.75rem_2.75rem_0.75rem] object-cover shadow-[0_50px_90px_-40px_rgba(41,37,36,0.55)] transition-transform duration-500 group-hover:scale-[1.01]"
               />
@@ -39,7 +40,7 @@ export default function About() {
 
                   {/* name */}
                   <p className="mt-1 font-['Fraunces'] text-lg leading-snug text-white">
-                    Antonio Santa Cruz Jr.
+                    Antonio R. Santa Cruz Jr.
                   </p>
 
                   {/* meta */}
@@ -66,7 +67,7 @@ export default function About() {
                 About / Profile
               </p>
 
-             <h1 className="font-['Fraunces'] text-5xl leading-[0.95] text-stone-950 sm:text-6xl lg:text-7xl">
+              <h1 className="font-['Fraunces'] text-5xl leading-[0.95] text-stone-950 sm:text-6xl lg:text-7xl">
                 Designing spaces
                 <br />
                 that feel intentional,
@@ -77,10 +78,12 @@ export default function About() {
               <div className="mt-8 h-px w-24 bg-gradient-to-r from-[#b88a4b]/70 to-transparent" />
 
               <p className="mt-8 max-w-2xl font-['Sora'] text-[15px] leading-relaxed text-stone-600">
-                I am an architecture student focused on translating human
-                behavior into spatial experience. My work blends structure,
-                narrative, and environmental awareness to create designs that
-                feel functional, intentional, and emotionally grounded.
+                I am an architecture student graduate focused on clean,
+                creative, and culturally rooted contemporary design turning
+                lived experiences into spatial metaphor. My work blends
+                structure, narrative, and environmental awareness to create
+                designs that feel functional, intentional, and emotionally
+                grounded.
               </p>
             </div>
           </div>
