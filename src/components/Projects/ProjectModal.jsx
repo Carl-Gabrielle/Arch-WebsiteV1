@@ -6,7 +6,6 @@ import ProjectHero from "./ProjectHero";
 import ProjectGallery from "./ProjectGallery";
 import ProjectMeta from "./ProjectMeta";
 import ProjectImpact from "./ProjectImpact";
-import { projectImages } from "./projectImages";
 
 export default function ProjectModal({ project, open, onClose }) {
   if (!project) return null;
@@ -70,7 +69,7 @@ export default function ProjectModal({ project, open, onClose }) {
                 <button
                   onClick={onClose}
                   className="
-                  cursor-pointer
+                    cursor-pointer
                     absolute
                     right-4
                     top-4
@@ -124,12 +123,12 @@ export default function ProjectModal({ project, open, onClose }) {
                   >
                     <ProjectHero project={project} />
 
-                    {/* GALLERY WRAPPER */}
+                    {/* GALLERY */}
                     <div className="relative">
-                      {/* subtle cinematic fade */}
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#111111] to-transparent" />
 
-                      <ProjectGallery images={projectImages} />
+                      {/* USE PROJECT GALLERY DIRECTLY */}
+                      <ProjectGallery images={project.gallery} />
                     </div>
                   </motion.div>
 
@@ -164,15 +163,14 @@ export default function ProjectModal({ project, open, onClose }) {
                         </span>
                       </div>
 
-                      {/* DESCRIPTION */}
-                      <h3 className="text-sm mt-5 uppercase tracking-[0.28em] text-zinc-600">
-                          Project Overview
-                        </h3>
-                      <p className="mt-5 text-[15px] leading-relaxed text-zinc-400">
-                        {project.concept}
-                      </p>
+                      {/* OVERVIEW */}
+                      <h3 className="mt-5 text-sm uppercase tracking-[0.28em] text-zinc-600">
+                        Project Overview
+                      </h3>
 
-                      <div className="my-8 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                      <p className="mt-5 text-[15px] leading-relaxed text-zinc-400">
+                        {project.overview}
+                      </p>
 
                       {/* PHILOSOPHY */}
                       <div className="mt-12">
@@ -181,8 +179,7 @@ export default function ProjectModal({ project, open, onClose }) {
                         </h3>
 
                         <p className="mt-5 text-[15px] leading-relaxed text-zinc-300">
-                          The design language centered around simplicity,
-                          contrast, and emotional spatial experience.
+                          {project.philosophy}
                         </p>
                       </div>
 
@@ -193,22 +190,13 @@ export default function ProjectModal({ project, open, onClose }) {
                         </h3>
 
                         <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-5">
-                          <ProjectImpact
-                            number="+45%"
-                            label="Improved spatial efficiency"
-                          />
-
-                          <ProjectImpact
-                            number="12"
-                            label="Weeks of development"
-                          />
-
-                          <ProjectImpact
-                            number="98%"
-                            label="Client satisfaction"
-                          />
-
-                          <ProjectImpact number="4K" label="High-end renders" />
+                          {project.impact.map((item, index) => (
+                            <ProjectImpact
+                              key={index}
+                              number={item.number}
+                              label={item.label}
+                            />
+                          ))}
                         </div>
                       </div>
 
@@ -225,7 +213,10 @@ export default function ProjectModal({ project, open, onClose }) {
                             value={project.location}
                           />
 
-                          <ProjectMeta label="Role" value={project.role} />
+                          <ProjectMeta
+                            label="Role"
+                            value={project.role}
+                          />
 
                           <ProjectMeta
                             label="Timeline"
@@ -244,7 +235,6 @@ export default function ProjectModal({ project, open, onClose }) {
                         </div>
                       </div>
 
-                      {/* EXTRA BOTTOM SPACE */}
                       <div className="h-20" />
                     </div>
 

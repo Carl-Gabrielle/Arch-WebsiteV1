@@ -1,4 +1,31 @@
-import Aerial from "../../assets/Aerial.png";
+import Thumb from "../../assets/aerialperspective.webp";
+import Aerial from "../../assets/aerialperspective1.webp";
+import Aerial2 from "../../assets/aerialperspective2.webp";
+import ElevatorLobby from "../../assets/elevatorlobby.webp";
+import Multimediagallery from "../../assets/multimediagallery.webp";
+import Plenary from "../../assets/plenaryhall.webp";
+import Receiving from "../../assets/receiving.webp";
+
+// General hospital
+import GeneralAerial from "../../assets/generalAerial.webp";
+
+// Mountain Retreat
+import Retreat1 from "../../assets/retreat1.webp";
+
+// Bungalow House
+import Bungalow1 from "../../assets/bungalow1.webp";
+
+// Residential House
+import Residential1 from "../../assets/residential1.webp";
+
+// Tri-City Ferry Terminal
+import terminal1 from "../../assets/terminal1.webp";
+
+// Light of Tomorrow by Velux
+import Light1 from "../../assets/light1.webp";
+
+// Placemaking Dagupan
+import Place1 from "../../assets/place1.webp";
 
 export const projectData = [
   {
@@ -74,25 +101,34 @@ export const projectData = [
     ],
 
     gallery: [
-      {
-        src: Aerial,
-        label: "Aerial Perspective",
-      },
-      {
-        src: Aerial,
-        label: "Main Cultural Plaza",
-      },
-      {
-        src: Aerial,
-        label: "Interior Spatial Experience",
-      },
-      {
-        src: Aerial,
-        label: "Architectural Composition",
-      },
+       {
+          src: Receiving,
+          label: "Receiving Area",
+        },
+      
+        {
+          src: ElevatorLobby,
+          label: "Elevator Lobby",
+        },
+        {
+          src: Multimediagallery,
+          label: "Multimedia Arts Gallery",
+        },
+        {
+          src: Plenary,
+          label: "Plenary Hall",
+        },
+        {
+          src: Aerial,
+          label: "Aerial Perspective",
+        },
+        {
+          src: Aerial2,
+          label: "Aerial Perspective",
+        },
     ],
 
-    image: Aerial,
+    image: Thumb,
 
     imageAlt:
       "Alaminos City Center for Culture and the Arts architectural aerial perspective",
@@ -165,24 +201,12 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Hospital Exterior Perspective",
-      },
-      {
-        src: Aerial,
-        label: "Patient Waiting Area",
-      },
-      {
-        src: Aerial,
-        label: "Circulation and Zoning Study",
-      },
-      {
-        src: Aerial,
-        label: "Architectural Facade Composition",
-      },
+          src: Aerial2,
+          label: "Aerial Perspective",
+        },
     ],
 
-    image: Aerial,
+    image: GeneralAerial,
 
     imageAlt:
       "Level 3 General Hospital architectural exterior perspective",
@@ -272,7 +296,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: Retreat1,
 
     imageAlt:
       "Mountain Retreat hospitality architectural perspective",
@@ -362,7 +386,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: Residential1,
 
     imageAlt:
       "Modern residential architectural perspective",
@@ -452,7 +476,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: Bungalow1,
 
     imageAlt:
       "Modern bungalow house architectural perspective",
@@ -542,7 +566,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: terminal1,
 
     imageAlt:
       "Tri-City Ferry Terminal architectural perspective",
@@ -632,7 +656,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: Light1,
 
     imageAlt:
       "Light of Tomorrow by Velux sustainable architecture competition proposal",
@@ -722,7 +746,7 @@ export const projectData = [
       },
     ],
 
-    image: Aerial,
+    image: Place1,
 
     imageAlt:
       "Placemaking Dagupan adaptive reuse architectural proposal",

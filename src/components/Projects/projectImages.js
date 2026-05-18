@@ -1,24 +1,33 @@
-import first from "../../assets/first.png";
-import second from "../../assets/second.png";
+import Aerial from "../../assets/aerialperspective1.webp";
+import Aerial2 from "../../assets/aerialperspective2.webp";
+import ElevatorLobby from "../../assets/elevatorlobby.webp";
+import Multimediagallery from "../../assets/multimediagallery.webp";
+import Plenary from "../../assets/plenaryhall.webp";
+import Receiving from "../../assets/receiving.webp";
 export const projectImages = [
   {
-    src: first,
-    label: "Interior Perspective",
+    src: Receiving,
+    label: "Receiving Area",
+  },
+
+  {
+    src: ElevatorLobby,
+    label: "Elevator Lobby",
   },
   {
-    src: second,
-    label: "Exterior View",
+    src: Multimediagallery,
+    label: "Multimedia Arts Gallery",
   },
   {
-    src: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop",
-    label: "Modern Living Space",
+    src: Plenary,
+    label: "Plenary Hall",
   },
   {
-    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop",
-    label: "Kitchen Composition",
+    src: Aerial,
+    label: "Aerial Perspective",
   },
   {
-    src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
-    label: "Architectural Detail",
+    src: Aerial2,
+    label: "Aerial Perspective",
   },
 ];

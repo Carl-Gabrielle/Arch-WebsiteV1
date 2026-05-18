@@ -192,7 +192,7 @@ export default function ProjectGallery({ images }) {
                       onLoad={() => setLoaded(true)}
                       className={`
                         max-h-[70vh] w-full object-contain rounded-[18px]
-                        transition duration-500
+                        transition duration-500 
                         ${loaded ? "blur-0 scale-100" : "blur-md scale-105"}
                       `}
                     />
