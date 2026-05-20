@@ -8,18 +8,47 @@ import Receiving from "../../assets/receiving.webp";
 
 // General hospital
 import GeneralAerial from "../../assets/generalAerial.webp";
+import Gen1 from "../../assets/gen1.webp";
+import Gen2 from "../../assets/gen2.webp";
+import Gen3 from "../../assets/gen3.webp";
+import Gen4 from "../../assets/gen4.webp";
+import Gen5 from "../../assets/gen5.webp";
+import Gen6 from "../../assets/gen6.webp";
 
 // Mountain Retreat
 import Retreat1 from "../../assets/retreat1.webp";
-
-// Bungalow House
-import Bungalow1 from "../../assets/bungalow1.webp";
+import Mount1 from "../../assets/mount1.webp";
+import Mount2 from "../../assets/mount2.webp";
+import Mount3 from "../../assets/mount3.webp";
+import Mount4 from "../../assets/mount4.webp";
+import Mount5 from "../../assets/mount5.webp";
 
 // Residential House
 import Residential1 from "../../assets/residential1.webp";
+import Res1 from "../../assets/res1.webp";
+import Res2 from "../../assets/res2.webp";
+import Res3 from "../../assets/res3.webp";
+import Res4 from "../../assets/res4.webp";
+import Res5 from "../../assets/res5.webp";
+import Res6 from "../../assets/res6.webp";
+
+// Bungalow House
+import Bungalow1 from "../../assets/bungalow1.webp";
+import Bung1 from "../../assets/bung1.webp";
+import Bung2 from "../../assets/bung2.webp";
+import Bung3 from "../../assets/bung3.webp";
+import Bung4 from "../../assets/bung4.webp";
+import Bung5 from "../../assets/bung5.webp";
+import Bung6 from "../../assets/bung6.webp";
 
 // Tri-City Ferry Terminal
 import terminal1 from "../../assets/terminal1.webp";
+import Tri1 from "../../assets/tri1.webp";
+import Tri2 from "../../assets/tri2.webp";
+import Tri3 from "../../assets/tri3.webp";
+import Tri4 from "../../assets/tri4.webp";
+import Tri5 from "../../assets/tri5.webp";
+import Tri6 from "../../assets/tri6.webp";
 
 // Light of Tomorrow by Velux
 import Light1 from "../../assets/light1.webp";
@@ -201,9 +230,30 @@ export const projectData = [
 
     gallery: [
       {
-          src: Aerial2,
+          src: Gen1,
           label: "Aerial Perspective",
         },
+        {
+          src: Gen2,
+          label: "Man's Eye View",
+        },
+        {
+          src: Gen3,
+          label: "Outpatient Facility ",
+        },
+        {
+          src: Gen4,
+          label: "Private Ward",
+        }, 
+        {
+          src: Gen5,
+          label: "Private Ward",
+        },
+        {
+          src: Gen6,
+          label: "Scene",
+        }
+
     ],
 
     image: GeneralAerial,
@@ -279,20 +329,24 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Retreat Exterior View",
+        src: Mount1,
+        label: "Aerial Perspective",
       },
       {
-        src: Aerial,
-        label: "Landscape Integration",
+        src: Mount2,
+        label: "Aerial Perspective",
       },
       {
-        src: Aerial,
-        label: "Interior Hospitality Space",
+        src: Mount3,
+        label: "Chalet",
       },
       {
-        src: Aerial,
-        label: "Natural Lighting Composition",
+        src: Mount4,
+        label: "Elevation",
+      },
+      {
+        src: Mount5,
+        label: "Man's Eye View",
       },
     ],
 
@@ -369,20 +423,28 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Residential Exterior Perspective",
+        src: Res1,
+        label: "Dining",
       },
       {
-        src: Aerial,
-        label: "Living Space Composition",
+        src: Res3,
+        label: "Living Area",
       },
       {
-        src: Aerial,
-        label: "Facade Study",
+        src: Res2,
+        label: "Kitchen",
       },
       {
-        src: Aerial,
-        label: "Lighting and Material Atmosphere",
+        src: Res4,
+        label: "Living Dining Kitchen ",
+      },
+      {
+        src: Res5,
+        label: "Man's Eye View",
+      },
+      {
+        src: Res6,
+        label: "Rear Elevation",
       },
     ],
 
@@ -459,21 +521,29 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Bungalow Exterior View",
+        src: Bung1,
+        label: "Dining Area",
       },
       {
-        src: Aerial,
-        label: "Interior Spatial Planning",
+        src: Bung2,
+        label: "Kitchen",
       },
       {
-        src: Aerial,
-        label: "Facade and Roof Composition",
+        src: Bung3,
+        label: "Lanai",
       },
       {
-        src: Aerial,
-        label: "Architectural Atmosphere",
+        src: Bung4,
+        label: "Living Area",
       },
+      {
+        src: Bung5,
+        label: " Man's Eye View",
+      },
+      {
+        src: Bung6,
+        label: " Man's Eye View",
+      }
     ],
 
     image: Bungalow1,
@@ -549,20 +619,28 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Terminal Exterior Perspective",
+        src: Tri1,
+        label: "Aerial Perspective",
       },
       {
-        src: Aerial,
-        label: "Passenger Waiting Area",
+        src: Tri2,
+        label: "Ferry Terminal",
       },
       {
-        src: Aerial,
-        label: "Circulation and Public Space",
+        src: Tri4,
+        label: "Man's Eye View",
       },
       {
-        src: Aerial,
-        label: "Architectural Facade View",
+        src: Tri3,
+        label: "Main Lobby ",
+      },
+      {
+        src: Tri5,
+        label:"Second Floor Open Area",
+      },
+      {
+        src: Tri6,
+        label: "Ticketing Area",
       },
     ],
 

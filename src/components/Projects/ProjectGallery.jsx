@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Expand, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const ease = [0.22, 1, 0.36, 1];
+
 export default function ProjectGallery({ images }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const [loaded, setLoaded] = useState(false);
@@ -17,7 +19,7 @@ export default function ProjectGallery({ images }) {
 
   const nextImage = () => {
     setLoaded(false);
-    setActiveIndex((prev) => (prev + 1) % images.length);
+    setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   const prevImage = () => {
@@ -46,91 +48,62 @@ export default function ProjectGallery({ images }) {
   return (
     <>
       {/* GRID */}
-      <div className="grid grid-cols-2 gap-3 p-4 sm:gap-5 sm:p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-4 md:p-6">
         {images.map((image, index) => {
           const count = String(index + 1).padStart(2, "0");
 
           return (
             <motion.button
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.5,
+                duration: 0.55,
                 delay: index * 0.05,
-                ease: [0.22, 1, 0.36, 1],
+                ease,
               }}
               onClick={() => setActiveIndex(index)}
-              className="group relative overflow-hidden rounded-[22px] border border-white/10 bg-[#111] cursor-pointer"
+              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0b0b0b] text-left cursor-pointer"
             >
-              <img
-                src={image.src}
-                alt={image.label}
-                className="
-                  h-[170px] w-full object-cover
-                  sm:h-[220px] lg:h-[260px]
-                  transition duration-700 ease-out
-                  group-hover:scale-[1.06]
-                "
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-
-              {/* TOP COUNT + ICON */}
-              <div className="absolute left-4 top-4">
-                <span
+              {/* IMAGE WRAPPER */}
+              <div className="relative aspect-[5/4] min-h-[240px] overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.label}
                   className="
-      inline-flex items-center justify-center
-      rounded-full
-      border border-white/20
-      bg-black/60
-      backdrop-blur-xl
-      px-3 py-1
+                    h-full w-full object-cover
+                    transition duration-700 ease-out
+                    md:group-hover:scale-[1.04]
+                  "
+                />
 
-      text-[10px]
-      tracking-[0.35em]
-      text-white
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-      shadow-[0_0_20px_rgba(0,0,0,0.6)]
-    "
-                >
-                  {count}
-                </span>
-              </div>
+                {/* CONTENT */}
+                <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5">
+                  {/* TOP */}
+                  <div className="flex items-center justify-between">
+                    <div className="rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-xl">
+                      <span className="text-[10px] uppercase tracking-[0.32em] text-white">
+                        {count}
+                      </span>
+                    </div>
 
-              <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/40 backdrop-blur-xl transition group-hover:scale-110">
-                <Expand size={14} />
-              </div>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 backdrop-blur-xl">
+                      <Expand size={15} />
+                    </div>
+                  </div>
 
-              {/* LABEL */}
-              <div className="absolute bottom-4 left-4">
-                <div
-                  className="
-      inline-flex items-center gap-2
-
-      rounded-full
-      border border-white/20
-      bg-black/60
-      backdrop-blur-xl
-
-      px-4 py-2
-
-      shadow-[0_0_20px_rgba(0,0,0,0.6)]
-    "
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
-
-                  <span
-                    className="
-        text-[10px]
-        uppercase
-        tracking-[0.25em]
-        text-white
-        whitespace-nowrap
-      "
-                  >
-                    {image.label}
-                  </span>
+                  {/* BOTTOM LABEL */}
+                  <div className="pb-1">
+                    <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-black/40 px-4 py-3 backdrop-blur-xl max-w-full">
+                      <span className="h-2 w-2 rounded-full bg-white/80 shrink-0" />
+                      <span className="truncate text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/90">
+                        {image.label}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.button>
@@ -147,69 +120,147 @@ export default function ProjectGallery({ images }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[999] bg-white/[0.03] backdrop-blur-2xl"
               onClick={closeModal}
+              className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-2xl"
             />
 
-            {/* CONTENT */}
+            {/* MODAL WRAPPER */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.45 }}
-              className="fixed inset-0 z-[1000] flex items-center justify-center p-4"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.45, ease }}
+              className="fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6"
             >
-              <div className="relative w-full max-w-4xl">
+              <div className="relative w-full max-w-6xl">
                 {/* CLOSE */}
                 <button
                   onClick={closeModal}
-                  className="cursor-pointer fixed right-4 top-4 z-[1100] flex h-10 w-10 items-center justify-center rounded-full bg-white/5 backdrop-blur-xl border border-white/10"
+                  className="
+    cursor-pointer fixed right-4 top-4 z-[1100]
+    flex h-11 w-11 items-center justify-center
+    rounded-full
+    border border-white/20
+    bg-black/70
+    text-white
+    shadow-2xl shadow-black/50
+    backdrop-blur-xl
+    transition-all duration-200
+    hover:scale-105 hover:bg-black/85
+    active:scale-95
+  "
                 >
-                  <X size={18} />
+                  <X
+                    size={18}
+                    className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+                  />
                 </button>
 
-                {/* NAV */}
-                <button
-                  onClick={prevImage}
-                  className=" cursor-pointer fixed left-4 top-1/2 -translate-y-1/2 z-[1100] flex h-10 w-10 items-center justify-center rounded-full bg-white/5 backdrop-blur-xl border border-white/10"
-                >
-                  <ChevronLeft size={18} />
-                </button>
+                {/* MODAL CARD */}
+                <div className="relative h-[85vh] w-full overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b] flex flex-col">
+                  {/* IMAGE AREA */}
+                  <div className="relative flex-1 overflow-hidden bg-black">
+                    {/* LEFT ARROW */}
+                    <button
+                      onClick={prevImage}
+                      className="
+    cursor-pointer
+    absolute left-4 inset-y-0 z-20
+    hidden md:flex items-center
+  "
+                    >
+                      <div
+                        className="
+      flex h-11 w-11 items-center justify-center
+      rounded-full
+      border border-white/20
+      bg-black/70
+      text-white
+      shadow-2xl shadow-black/50
+      backdrop-blur-xl
+      transition-all duration-200
+      hover:scale-105 hover:bg-black/85
+      active:scale-95
+    "
+                      >
+                        <ChevronLeft
+                          size={18}
+                          className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+                        />
+                      </div>
+                    </button>
 
-                <button
-                  onClick={nextImage}
-                  className="cursor-pointer fixed right-4 top-1/2 -translate-y-1/2 z-[1100] flex h-10 w-10 items-center justify-center rounded-full bg-white/5 backdrop-blur-xl border border-white/10"
-                >
-                  <ChevronRight size={18} />
-                </button>
+                    {/* RIGHT ARROW */}
+                    <button
+                      onClick={nextImage}
+                      className="
+    cursor-pointer
+    absolute right-4 inset-y-0 z-20
+    hidden md:flex items-center
+  "
+                    >
+                      <div
+                        className="
+      flex h-11 w-11 items-center justify-center
+      rounded-full
+      border border-white/20
+      bg-black/70
+      text-white
+      shadow-2xl shadow-black/50
+      backdrop-blur-xl
+      transition-all duration-200
+      hover:scale-105 hover:bg-black/85
+      active:scale-95
+    "
+                      >
+                        <ChevronRight
+                          size={18}
+                          className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+                        />
+                      </div>
+                    </button>
 
-                {/* IMAGE */}
-                <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#0b0b0b]/80 backdrop-blur-xl">
-                  <div className="flex items-center justify-center p-6">
+                    {/* IMAGE */}
                     <img
                       src={activeImage.src}
                       alt={activeImage.label}
                       onLoad={() => setLoaded(true)}
                       className={`
-                        max-h-[70vh] w-full object-contain rounded-[18px]
-                        transition duration-500 
-                        ${loaded ? "blur-0 scale-100" : "blur-md scale-105"}
+                        h-full w-full object-cover
+                        transition duration-500
+                        ${
+                          loaded
+                            ? "opacity-100 scale-100 blur-0"
+                            : "opacity-60 scale-[1.02] blur-md"
+                        }
                       `}
                     />
+
+                    {/* MOBILE NAV */}
+                    <div className="absolute inset-x-0 bottom-4 flex justify-center gap-3 md:hidden">
+                      <button
+                        onClick={prevImage}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/50 backdrop-blur-xl"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+
+                      <button
+                        onClick={nextImage}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/50 backdrop-blur-xl"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </div>
                   </div>
 
                   {/* FOOTER */}
-                  <div className="flex items-center justify-between border-t border-white/10 px-5 py-4">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
-                        Preview
-                      </p>
-                      <h3 className="text-sm text-white">
-                        {activeImage.label}
-                      </h3>
-                    </div>
+                  <div className="flex items-center justify-between gap-4 border-t border-white/10 px-5 py-4 sm:px-6 shrink-0">
+                    <h3 className="truncate text-sm sm:text-base text-white">
+                      {activeImage.label}
+                    </h3>
 
-                    <div className="text-[9px] uppercase tracking-[0.25em] text-white/60">
+                    <div className="shrink-0 text-[10px] uppercase tracking-[0.28em] text-white/50">
                       {String(activeIndex + 1).padStart(2, "0")} /{" "}
                       {String(images.length).padStart(2, "0")}
                     </div>
