@@ -52,9 +52,22 @@ import Tri6 from "../../assets/tri6.webp";
 
 // Light of Tomorrow by Velux
 import Light1 from "../../assets/light1.webp";
+import Light2 from "../../assets/light2.webp";
+import Light3 from "../../assets/light3.webp";
+import Light4 from "../../assets/light4.webp";
+import Light5 from "../../assets/light5.webp";
+import Light6 from "../../assets/light6.webp";
+import Light7 from "../../assets/light7.webp";
+import Light8 from "../../assets/light8.webp";
 
 // Placemaking Dagupan
 import Place1 from "../../assets/place1.webp";
+import Place2 from "../../assets/place2.webp";
+import Place3 from "../../assets/place3.webp";
+import Place4 from "../../assets/place4.webp";
+import Place5 from "../../assets/place5.webp";
+import Place6 from "../../assets/place6.webp";
+import Place7 from "../../assets/place7.webp";
 
 export const projectData = [
   {
@@ -267,7 +280,7 @@ export const projectData = [
 
     title: "Mountain Retreat",
     category: "Academic",
-    type: "Hospitality Architecture",
+    type: "Retreat Architecture",
     year: "2025",
 
     location: "Bani, Pangasinan",
@@ -361,7 +374,7 @@ export const projectData = [
 
     title: "Residential House",
     category: "Academic",
-    type: "Residential Building",
+    type: "Residential Design",
     year: "2025",
 
     location: "Brgy. Ataynan, Bayambang, Pangasinan",
@@ -459,7 +472,7 @@ export const projectData = [
 
     title: "Bungalow House",
     category: "Academic",
-    type: "Residential Building",
+    type: "Residential Architecture",
     year: "2025",
 
     location: "Brgy. Balangobong, Alaminos City, Pangasinan",
@@ -716,21 +729,29 @@ export const projectData = [
     ],
 
     gallery: [
-      {
-        src: Aerial,
-        label: "Climate-Responsive Exterior",
+       {
+        src: Light3,
+        label: "Aerial Perspective",
+      },
+       {
+        src: Light7,
+        label: "Site Integration Perspective",
       },
       {
-        src: Aerial,
-        label: "Passive Cooling Strategy",
+        src: Light8,
+        label: "Worm's Eye View",
       },
       {
-        src: Aerial,
-        label: "Worker Protection Zones",
+        src: Light4,
+        label: "Irrigation System",
       },
       {
-        src: Aerial,
-        label: "Conceptual Architectural Composition",
+        src: Light5,
+        label: "Man's Eye View",
+      },
+      {
+        src: Light6,
+        label: "Salt Farmer",
       },
     ],
 
@@ -807,20 +828,28 @@ export const projectData = [
 
     gallery: [
       {
-        src: Aerial,
-        label: "Adaptive Reuse Perspective",
+        src: Place3,
+        label: "Aerial Perspective",
       },
       {
-        src: Aerial,
-        label: "Public Gathering Space",
+        src: Place4,
+        label: "Boat Terminal ",
       },
       {
-        src: Aerial,
-        label: "Cultural Revitalization Strategy",
+        src: Place5,
+        label: "Main",
+      },
+       {
+        src: Place2,
+        label: "Night Scene",
       },
       {
-        src: Aerial,
-        label: "Urban Experience Composition",
+        src: Place6,
+        label: "Night Scene",
+      },
+      {
+        src: Place7,
+        label: "Night Scene",
       },
     ],
 

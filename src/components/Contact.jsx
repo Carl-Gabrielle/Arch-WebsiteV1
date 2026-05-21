@@ -20,7 +20,7 @@ import {
 } from "react-icons/fa";
 
 const calendlyUrl =
-  "https://calendly.com/carlgabrielleorfinada1/30min";
+  "https://calendly.com/santacruzantonioregines/30min";
 
 const contacts = [
   {
@@ -110,7 +110,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#0d0d0d] py-16 text-white sm:py-20 lg:py-28"
+      className="rounded-t-[3rem] relative overflow-hidden bg-[#0d0d0d] py-16 text-white sm:py-20 lg:py-28"
     >
       {/* GRID */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]">

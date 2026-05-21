@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import Logo from "../../assets/logo.png";
 const ease = [0.22, 1, 0.36, 1];
 
 const container = {
@@ -42,11 +42,19 @@ export default function Brand() {
       {/* LOGO */}
       <motion.img
         variants={fadeUp}
-        src="https://res.cloudinary.com/dcpjh6z5h/image/upload/Transparent_Black_Logo-01_b7jdzb"
+        src={Logo}
         alt="A. Santa Cruz Logo"
-        className="h-[3.4rem] w-[3.4rem] lg:h-[4.3rem] lg:w-[4.3rem] shrink-0 object-contain"
+        className="
+    h-[5.5rem]
+    w-[5.5rem]
+    lg:h-[6.5rem]
+    lg:w-[6.5rem]
+    shrink-0
+    object-contain
+    -my-5
+  "
         whileHover={{
-          scale: 1.04,
+          scale: 1.03,
         }}
         transition={{ duration: 0.4, ease }}
       />

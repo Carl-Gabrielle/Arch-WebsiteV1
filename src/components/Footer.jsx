@@ -9,6 +9,8 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+import Logo from "../assets/Cglogo.png";
+
 const quickLinks = [
   { name: "Home", href: "#home" },
   { name: "Projects", href: "#projects" },
@@ -260,13 +262,55 @@ export default function Footer() {
 
         {/* SIGNATURE */}
         <motion.div
-          variants={softReveal}
-          className="pointer-events-none mt-10 border-t border-zinc-900 pt-5"
-        >
-          <p className="text-center text-[10px] uppercase tracking-[0.35em] text-zinc-600 sm:text-right">
-            CGNO Web & Design
-          </p>
-        </motion.div>
+  variants={softReveal}
+  className="pointer-events-none mt-10 border-t border-zinc-900/80 pt-6"
+>
+  <div className="flex flex-col items-center justify-center text-center">
+    {/* LOGO */}
+    <div className="relative mb-3">
+      <div className="absolute inset-0 rounded-full bg-white/5 blur-2xl" />
+
+      <img
+        src={Logo}
+        alt="CGNO Web & Design Logo"
+        className="
+          relative
+          h-14
+          w-auto
+          object-contain
+          opacity-90
+        "
+      />
+    </div>
+
+    {/* TEXT */}
+    <div className="leading-none">
+      <span
+        className="
+          text-[0.58rem]
+          uppercase
+          tracking-[0.42em]
+          text-zinc-500
+        "
+      >
+        Creative Development by
+      </span>
+
+      <p
+        className="
+          mt-2
+          font-['Cinzel']
+          text-[0.7rem]
+          uppercase
+          tracking-[0.32em]
+          text-zinc-200
+        "
+      >
+        CGNO Web & Design
+      </p>
+    </div>
+  </div>
+</motion.div>
       </motion.div>
     </footer>
   );

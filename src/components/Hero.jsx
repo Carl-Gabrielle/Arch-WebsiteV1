@@ -48,11 +48,7 @@ const smoothReveal = {
 };
 
 export default function Hero() {
-  const focusAreas = [
-    "Adaptive Reuse",
-    "Neo-Vernacular",
-    "Phenomenology",
-  ];
+  const focusAreas = ["Adaptive Reuse", "Neo-Vernacular", "Phenomenology"];
 
   const quickFacts = [
     { value: "25+", label: "Studio Projects" },
@@ -123,9 +119,9 @@ export default function Hero() {
             variants={smoothUp}
             className="max-w-2xl font-['Sora'] text-sm leading-relaxed text-stone-700 sm:text-base md:text-[17px]"
           >
-            I am an architecture student graduate focused on clean,
-            creative, and culturally rooted contemporary design.
-            Preparing for internship opportunities this 2026.
+            I am an architecture student graduate focused on clean, creative,
+            and culturally rooted contemporary design. Preparing for internship
+            opportunities this 2026.
           </motion.p>
 
           {/* CTA */}
@@ -134,6 +130,7 @@ export default function Hero() {
             className="flex flex-col gap-3 sm:flex-row"
           >
             <motion.a
+              href="#projects"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4 }}
@@ -143,6 +140,8 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
+              href="/anton-cv.pdf"
+              target="_blank"
               whileHover={{ y: -2 }}
               transition={{ duration: 0.4 }}
               className="flex items-center justify-center rounded-full border border-stone-900/20 bg-white/30 px-7 py-3 text-center text-[11px] uppercase tracking-[0.22em] backdrop-blur-md"
@@ -152,10 +151,7 @@ export default function Hero() {
           </motion.div>
 
           {/* FOCUS */}
-          <motion.div
-            variants={smoothUp}
-            className="flex flex-wrap gap-3"
-          >
+          <motion.div variants={smoothUp} className="flex flex-wrap gap-3">
             {focusAreas.map((item) => (
               <motion.span
                 key={item}
@@ -203,13 +199,13 @@ export default function Hero() {
               className="h-[420px] w-full rounded-[2rem_1rem_2.8rem_1rem] object-cover shadow-[0_35px_90px_-30px_rgba(0,0,0,0.45)] sm:h-[520px] lg:h-[620px]"
             />
 
-           {/* GLASS FEATURE CARD */}
-<motion.div
-  initial={{ opacity: 0, y: 18 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1.2, delay: 0.3, ease }}
-  whileHover={{ y: -4 }}
-  className="
+            {/* GLASS FEATURE CARD */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, ease }}
+              whileHover={{ y: -4 }}
+              className="
     absolute
     bottom-4
     left-4
@@ -228,39 +224,38 @@ export default function Hero() {
     sm:w-[390px]
     sm:p-7
   "
->
-  {/* GLASS LIGHT */}
-  <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent" />
+            >
+              {/* GLASS LIGHT */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent" />
 
-  {/* INNER BORDER */}
-  <div className="absolute inset-[1px] rounded-[2rem] border border-white/10" />
+              {/* INNER BORDER */}
+              <div className="absolute inset-[1px] rounded-[2rem] border border-white/10" />
 
-  {/* CONTENT */}
-  <div className="relative z-10">
-    <p className="text-[11px] uppercase tracking-[0.35em] text-white/60">
-      Featured Project
-    </p>
+              {/* CONTENT */}
+              <div className="relative z-10">
+                <p className="text-[11px] uppercase tracking-[0.35em] text-white/60">
+                  Featured Project
+                </p>
 
-    <h3 className="mt-4 font-['Fraunces'] text-[2rem] leading-[1.05] text-white">
-      Alaminos City Center for Culture and the Arts
-    </h3>
+                <h3 className="mt-4 font-['Fraunces'] text-[2rem] leading-[1.05] text-white">
+                  Alaminos City Center for Culture and the Arts
+                </h3>
 
-    <p className="mt-4 text-[15px] leading-relaxed text-white/75">
-      Phenomenological + symbolic cultural expressionism
-      exploring the rich history and heritage of Alaminos
-      City.
-    </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-white/75">
+                  Phenomenological + symbolic cultural expressionism exploring
+                  the rich history and heritage of Alaminos City.
+                </p>
 
-    {/* META */}
-    <div className="mt-6 flex items-center gap-3">
-      <div className="h-2.5 w-2.5 rounded-full bg-[#d4a45f] shadow-[0_0_20px_rgba(212,164,95,0.9)]" />
+                {/* META */}
+                <div className="mt-6 flex items-center gap-3">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#d4a45f] shadow-[0_0_20px_rgba(212,164,95,0.9)]" />
 
-      <p className="text-[10px] uppercase tracking-[0.28em] text-white/55">
-        Thesis Project • 2026
-      </p>
-    </div>
-  </div>
-</motion.div>
+                  <p className="text-[10px] uppercase tracking-[0.28em] text-white/55">
+                    Thesis Project • 2026
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
