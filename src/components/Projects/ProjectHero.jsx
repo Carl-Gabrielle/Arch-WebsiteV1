@@ -27,7 +27,7 @@ export default function ProjectHero({ project }) {
           tracking-[0.25em] text-white backdrop-blur-md 
           sm:px-4 sm:text-[10px]
         ">
-          Premium Case Study
+           Case Study
         </span>
 
         <h2 className="

@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { CountUp } from "use-count-up";
+import { useInView } from "react-intersection-observer";
+
 import Aerial from "../assets/aerialperspective.webp";
 
 const ease = [0.22, 1, 0.36, 1];
@@ -48,13 +51,22 @@ const smoothReveal = {
 };
 
 export default function Hero() {
-  const focusAreas = ["Adaptive Reuse", "Neo-Vernacular", "Phenomenology"];
+  const focusAreas = [
+    "Adaptive Reuse",
+    "Neo-Vernacular",
+    "Phenomenology",
+  ];
 
   const quickFacts = [
-    { value: "25+", label: "Studio Projects" },
-    { value: "03", label: "Design Competitions" },
-    { value: "2026", label: "Internship Ready" },
+    { value: 25, suffix: "+", label: "Selected Works" },
+    { value: 3, suffix: "", label: "Competitions" },
+    { value: 2026, suffix: "", label: "Internship Year" },
   ];
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.35,
+  });
 
   return (
     <section className="relative isolate overflow-hidden bg-[#f3f1ec] text-stone-900">
@@ -119,9 +131,9 @@ export default function Hero() {
             variants={smoothUp}
             className="max-w-2xl font-['Sora'] text-sm leading-relaxed text-stone-700 sm:text-base md:text-[17px]"
           >
-            I am an architecture student graduate focused on clean, creative,
-            and culturally rooted contemporary design. Preparing for internship
-            opportunities this 2026.
+            I am an architecture student graduate focused on clean,
+            creative, and culturally rooted contemporary design.
+            Preparing for internship opportunities this 2026.
           </motion.p>
 
           {/* CTA */}
@@ -151,7 +163,10 @@ export default function Hero() {
           </motion.div>
 
           {/* FOCUS */}
-          <motion.div variants={smoothUp} className="flex flex-wrap gap-3">
+          <motion.div
+            variants={smoothUp}
+            className="flex flex-wrap gap-3"
+          >
             {focusAreas.map((item) => (
               <motion.span
                 key={item}
@@ -166,13 +181,25 @@ export default function Hero() {
 
           {/* STATS */}
           <motion.div
+            ref={ref}
             variants={smoothUp}
             className="grid grid-cols-3 gap-5 border-t border-stone-300/50 pt-8"
           >
             {quickFacts.map((f) => (
               <div key={f.label}>
                 <p className="font-['Fraunces'] text-2xl sm:text-3xl">
-                  {f.value}
+                  {inView ? (
+                    <>
+                      <CountUp
+                        isCounting
+                        end={f.value}
+                        duration={2.4}
+                      />
+                      {f.suffix}
+                    </>
+                  ) : (
+                    "0"
+                  )}
                 </p>
 
                 <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-stone-500 sm:text-[11px]">
@@ -194,6 +221,7 @@ export default function Hero() {
             {/* IMAGE */}
             <motion.img
               src={Aerial}
+              alt="Architecture Aerial Perspective"
               whileHover={{ scale: 1.015 }}
               transition={{ duration: 0.8, ease }}
               className="h-[420px] w-full rounded-[2rem_1rem_2.8rem_1rem] object-cover shadow-[0_35px_90px_-30px_rgba(0,0,0,0.45)] sm:h-[520px] lg:h-[620px]"
@@ -206,24 +234,24 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.3, ease }}
               whileHover={{ y: -4 }}
               className="
-    absolute
-    bottom-4
-    left-4
-    right-4
-    overflow-hidden
-    rounded-[2rem]
-    border
-    border-white/20
-    bg-black/35
-    p-6
-    shadow-[0_30px_80px_-20px_rgba(0,0,0,0.65)]
-    backdrop-blur-2xl
-    sm:bottom-8
-    sm:left-8
-    sm:right-auto
-    sm:w-[390px]
-    sm:p-7
-  "
+                absolute
+                bottom-4
+                left-4
+                right-4
+                overflow-hidden
+                rounded-[2rem]
+                border
+                border-white/20
+                bg-black/35
+                p-6
+                shadow-[0_30px_80px_-20px_rgba(0,0,0,0.65)]
+                backdrop-blur-2xl
+                sm:bottom-8
+                sm:left-8
+                sm:right-auto
+                sm:w-[390px]
+                sm:p-7
+              "
             >
               {/* GLASS LIGHT */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent" />
@@ -242,8 +270,8 @@ export default function Hero() {
                 </h3>
 
                 <p className="mt-4 text-[15px] leading-relaxed text-white/75">
-                  Phenomenological + symbolic cultural expressionism exploring
-                  the rich history and heritage of Alaminos City.
+                  Phenomenological + symbolic cultural expressionism
+                  exploring the rich history and heritage of Alaminos City.
                 </p>
 
                 {/* META */}

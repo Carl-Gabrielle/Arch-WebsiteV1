@@ -80,6 +80,14 @@ export default function FeaturedProjectCard({ project }) {
   return (
     <>
       <motion.article
+        role="button"
+        tabIndex={0}
+        onClick={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setOpen(true);
+          }
+        }}
         initial={{
           opacity: 0,
           y: reduceMotion ? 0 : 50,
@@ -98,7 +106,7 @@ export default function FeaturedProjectCard({ project }) {
         whileHover={{
           y: -6,
         }}
-        className="group relative overflow-hidden rounded-[40px] border border-zinc-800 bg-[#151515] transition-all duration-700 hover:border-zinc-700 hover:shadow-[0_0_80px_rgba(183,139,82,0.12)]"
+        className="group relative cursor-pointer overflow-hidden rounded-[40px] border border-zinc-800 bg-[#151515] transition-all duration-700 hover:border-zinc-700 hover:shadow-[0_0_80px_rgba(183,139,82,0.12)] focus:outline-none"
       >
         <div className="grid lg:grid-cols-2">
           {/* IMAGE */}
@@ -235,24 +243,20 @@ export default function FeaturedProjectCard({ project }) {
               </motion.div>
             </div>
 
-            {/* BUTTON */}
+            {/* CTA */}
             <motion.div
               variants={revealSoft}
               className="mt-10"
             >
-              <motion.button
+              <motion.div
                 whileHover={{
                   x: 4,
-                }}
-                whileTap={{
-                  scale: 0.985,
                 }}
                 transition={{
                   duration: 0.35,
                   ease,
                 }}
-                onClick={() => setOpen(true)}
-                className="group inline-flex cursor-pointer items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-xs uppercase tracking-[0.24em] text-white backdrop-blur-xl transition-all duration-500 hover:border-[#b78b52] hover:bg-[#b78b52] hover:text-black"
+                className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-xs uppercase tracking-[0.24em] text-white backdrop-blur-xl transition-all duration-500 group-hover:border-[#b78b52] group-hover:bg-[#b78b52] group-hover:text-black"
               >
                 View Case Study
 
@@ -260,7 +264,7 @@ export default function FeaturedProjectCard({ project }) {
                   size={16}
                   className="transition duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
                 />
-              </motion.button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

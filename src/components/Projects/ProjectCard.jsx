@@ -38,6 +38,14 @@ export default function ProjectCard({ project, onOpenDetails }) {
 
   return (
     <motion.article
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpenDetails(project)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          onOpenDetails(project);
+        }
+      }}
       variants={cardReveal}
       initial="hidden"
       whileInView="show"
@@ -49,7 +57,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
         duration: 0.5,
         ease,
       }}
-      className="group flex h-full min-h-[38rem] flex-col overflow-hidden rounded-[30px] border border-zinc-800 bg-[#151515] will-change-transform"
+      className="group flex h-full min-h-[38rem] cursor-pointer flex-col overflow-hidden rounded-[30px] border border-zinc-800 bg-[#151515] transition-all duration-700 will-change-transform hover:border-zinc-700 hover:shadow-[0_0_60px_rgba(183,139,82,0.10)] focus:outline-none"
     >
       {/* IMAGE */}
       <div className="relative overflow-hidden">
@@ -202,7 +210,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
         </motion.div>
 
         {/* CTA */}
-        <motion.button
+        <motion.div
           initial={{
             opacity: 0,
             y: 12,
@@ -220,8 +228,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
           whileHover={{
             x: 4,
           }}
-          onClick={() => onOpenDetails(project)}
-          className="mt-8 inline-flex cursor-pointer items-center gap-2 text-sm uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:text-[#b78b52]"
+          className="mt-8 inline-flex items-center gap-2 text-sm uppercase tracking-[0.18em] text-white transition-colors duration-300 group-hover:text-[#b78b52]"
         >
           Explore Project
 
@@ -229,7 +236,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
             size={16}
             className="transition duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
           />
-        </motion.button>
+        </motion.div>
       </div>
     </motion.article>
   );
