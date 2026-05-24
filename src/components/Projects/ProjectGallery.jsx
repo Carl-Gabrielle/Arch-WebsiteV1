@@ -1,26 +1,17 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  Expand,
-  X,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { Expand, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { useEffect, useState } from "react";
 
 const ease = [0.22, 1, 0.36, 1];
 
-export default function ProjectGallery({
-  images,
-  mobileCarousel = false,
-}) {
+export default function ProjectGallery({ images, mobileCarousel = false }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
-  const activeImage =
-    activeIndex !== null ? images[activeIndex] : null;
+  const activeImage = activeIndex !== null ? images[activeIndex] : null;
 
   const closeModal = () => {
     setActiveIndex(null);
@@ -30,17 +21,13 @@ export default function ProjectGallery({
   const nextImage = () => {
     setLoaded(false);
 
-    setActiveIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   const prevImage = () => {
     setLoaded(false);
 
-    setActiveIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -407,57 +394,85 @@ export default function ProjectGallery({
                 <div
                   className="
                     flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-black/70
-                    backdrop-blur-xl
-                    transition
-                    duration-300
-                    hover:scale-105
-                    hover:bg-black/90
+      h-12
+      w-12
+      items-center
+      justify-center
+      rounded-full
+
+      /* stronger contrast system */
+      bg-white/20
+      backdrop-blur-xl
+
+      /* adaptive border for any background */
+      border border-white/40
+
+      /* ensures visibility on bright images */
+      shadow-[0_8px_30px_rgba(0,0,0,0.45)]
+      ring-1 ring-black/40
+
+      /* smoother interaction */
+      transition duration-300 ease-out
+      hover:scale-110
+      hover:bg-white/30
+      active:scale-95
                   "
                 >
-                  <ChevronLeft size={18} />
+                  <ChevronLeft
+                    className="  text-white
+        drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+                    size={18}
+                  />
                 </div>
               </button>
 
               <button
                 onClick={nextImage}
                 className="
-                  absolute
-                  right-6
-                  top-1/2
-                  z-20
-                  hidden
-                  -translate-y-1/2
-                  cursor-pointer
-                  md:block
-                "
+    absolute
+    right-6
+    top-1/2
+    z-50
+    hidden
+    -translate-y-1/2
+    cursor-pointer
+    md:block
+  "
               >
                 <div
                   className="
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-black/70
-                    backdrop-blur-xl
-                    transition
-                    duration-300
-                    hover:scale-105
-                    hover:bg-black/90
-                  "
+      flex
+      h-12
+      w-12
+      items-center
+      justify-center
+      rounded-full
+
+      /* stronger contrast system */
+      bg-white/20
+      backdrop-blur-xl
+
+      /* adaptive border for any background */
+      border border-white/40
+
+      /* ensures visibility on bright images */
+      shadow-[0_8px_30px_rgba(0,0,0,0.45)]
+      ring-1 ring-black/40
+
+      /* smoother interaction */
+      transition duration-300 ease-out
+      hover:scale-110
+      hover:bg-white/30
+      active:scale-95
+    "
                 >
-                  <ChevronRight size={18} />
+                  <ChevronRight
+                    size={18}
+                    className="
+        text-white
+        drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]
+      "
+                  />
                 </div>
               </button>
 
