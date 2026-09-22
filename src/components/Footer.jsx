@@ -9,7 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-import Logo from "../assets/Cglogo.png";
+import Logo from "../assets/avance_logo.png";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -272,10 +272,10 @@ export default function Footer() {
 
       <img
         src={Logo}
-        alt="CGNO Web & Design Logo"
+        alt="Avance - Web Design & Development Logo"
         className="
           relative
-          h-14
+          h-8
           w-auto
           object-contain
           opacity-90
@@ -306,7 +306,7 @@ export default function Footer() {
           text-zinc-200
         "
       >
-        CGNO Web & Design
+        Avance - Web Design & Development
       </p>
     </div>
   </div>
