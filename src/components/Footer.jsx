@@ -11,6 +11,7 @@ import {
 
 import Logo from "../assets/avance_logo.png";
 
+
 const quickLinks = [
   { name: "Home", href: "#home" },
   { name: "Projects", href: "#projects" },
